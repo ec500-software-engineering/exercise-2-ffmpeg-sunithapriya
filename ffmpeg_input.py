@@ -9,7 +9,7 @@ def convertVideo720(filename):
 	print("Converting "+filename+" to 720p")
 	if filename+"_720p.mp4" in os.listdir("outputVideos"):
 		os.remove("outputVideos/"+filename+"_720p.mp4")
-	result = subprocess.check_output("ffmpeg  -loglevel panic -i inputVideos/"+filename+" -vf scale=-1:720 -b:v 2097152 -r 30 outputVideos/"+filename+"_720p.mp4",shell=True)
+	subprocess.check_output("ffmpeg  -loglevel panic -i inputVideos/"+filename+" -vf scale=-1:720 -b:v 2097152 -r 30 outputVideos/"+filename+"_720p.mp4",shell=True)
 	print("Converted "+filename+" to 720p")	
 
 def convertVideo480(filename):
