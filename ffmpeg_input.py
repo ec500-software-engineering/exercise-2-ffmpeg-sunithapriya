@@ -3,14 +3,6 @@ import subprocess
 import Queue
 import threading 
 
-# for filename in os.listdir("inputVideos"):
-# 	print(filename)
-# 	if (filename.endswith(".mp4")):
-# 		subprocess.call("ffmpeg -i inputVideos/"+filename+" -vf scale=-1:720 -b:v 2097152 -r 30 outputVideos/"+filename+"_720p.mp4",shell=True)
-# 		subprocess.call("ffmpeg -i inputVideos/"+filename+" -vf scale=-1:480 -b:v 1048576 -r 30 outputVideos/"+filename+"_480p.mp4", shell=True)
-# 	else:
-# 		continue
-
 threads = []
 
 def convertVideo720(filename):
