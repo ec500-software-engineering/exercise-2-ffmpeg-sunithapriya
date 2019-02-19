@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+ffmpeg_bkp.py
+
 # Distribution / packaging
 .Python
 build/
