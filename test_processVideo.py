@@ -5,22 +5,22 @@ import subprocess
 from pytest import approx
 import json
 
-@pytest.fixture
-def genpat(tmp_path) -> Path:
-	"""
-	generate test video
-	"""
-	vidfn = str(tmp_path / 'bars.avi')
+#@pytest.fixture
+# def genpat(tmp_path) -> Path:
+# 	"""
+# 	generate test video
+# 	"""
+# 	vidfn = str(tmp_path / 'bars.avi')
 
-	subprocess.check_call(['ffmpeg', '-v', 'warning', '-f', 'lavfi', '-i', 'smptebars', '-t', '5.', vidfn])
-	return vidfn
+# 	subprocess.check_call(['ffmpeg', '-v', 'warning', '-f', 'lavfi', '-i', 'smptebars', '-t', '5.', vidfn])
+# 	return vidfn
 
 def duration(path):
 	return float(json.loads(subprocess.check_output(['ffprobe','-print_format','json','-show_format',path]))['format']['duration'])
 
-def test_processVideo(genpat):
+def test_processVideo():
 
-	fn = genpat
+	fn = 'video2.mp4'
 	result = processVideo(fn)
 
 	orig_duration = duration(fn)
