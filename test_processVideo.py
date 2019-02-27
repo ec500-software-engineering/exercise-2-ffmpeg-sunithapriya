@@ -10,9 +10,9 @@ def genpat(tmp_path) -> Path:
 	"""
 	generate test video
 	"""
-	vidfn = tmp_path / 'bars.avi'
+	vidfn = str(tmp_path / 'bars.avi')
 
-	subprocess.check_call(['ffmpeg', '-v', 'warning', '-f', 'lavfi', '-i', 'smptebars', '-t', '5.', str(vidfn)])
+	subprocess.check_call(['ffmpeg', '-v', 'warning', '-f', 'lavfi', '-i', 'smptebars', '-t', '5.', vidfn])
 	return vidfn
 
 def duration(path):
