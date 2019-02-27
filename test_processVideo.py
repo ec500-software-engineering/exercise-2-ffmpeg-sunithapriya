@@ -15,7 +15,7 @@ def genpat(tmp_path) -> Path:
 	subprocess.check_call(['ffmpeg', '-v', 'warning', '-f', 'lavfi', '-i', 'smptebars', '-t', '5.', str(vidfn)])
 	return vidfn
 
-def duration(path) -> Path:
+def duration(path):
 	return float(json.loads(subprocess.check_output(['ffprobe','-print_format','json','-show_format',path]))['format']['duration'])
 
 def test_processVideo(genpat):
