@@ -20,7 +20,7 @@ def duration(path):
 
 def test_processVideo(genpat):
 
-	fn = 'video2.mp4'
+	fn = genpat
 	result = processVideo(fn)
 
 	orig_duration = duration(fn)
