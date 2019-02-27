@@ -20,15 +20,15 @@ def duration(path):
 
 def test_processVideo(genpat):
 
-	fn = genpat
+	fn = 'video2.mp4'
 	result = processVideo(fn)
 
 	orig_duration = duration(fn)
 	duration_720 = duration(result[0])
 	duration_480 = duration(result[1])
 
-	assert orig_duration == approx(duration_720)
-	assert orig_duration == approx(duration_480)
+	assert orig_duration == duration_720
+	assert orig_duration == duration_480
 
 
 
