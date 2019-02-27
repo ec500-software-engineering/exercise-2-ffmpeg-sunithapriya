@@ -20,7 +20,7 @@ def duration(path):
 
 def test_processVideo():
 
-	fn = 'video2.mp4'
+	fn = 'video2.avi'
 	result = processVideo(fn)
 
 	orig_duration = duration(fn)
