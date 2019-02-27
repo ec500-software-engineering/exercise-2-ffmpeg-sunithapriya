@@ -13,6 +13,11 @@ video1_480p.mp4
 video1_720p.mp4
 video2_480p.mp4
 video2_720p.mp4
+outputVideos/.DS_Store
+video1.mp4
+.DS_Store
+outputVideos/.DS_Store
+.DS_Store
 
 # Distribution / packaging
 .Python

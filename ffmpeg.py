@@ -16,12 +16,12 @@ def processVideo(file):
 	# if filename+"_480p.mp4" in os.listdir("outputVideos"):
 	# 	os.remove("outputVideos/"+filename+"_480p.mp4")
 
-	subprocess.call(f"ffmpeg -loglevel panic -i {file} -vf scale=-1:720 -b:v 2097152 {filename}_720p.mp4",shell=True)
+	subprocess.call("ffmpeg -loglevel panic -i "+file+" -vf scale=-1:720 -b:v 2097152 "+filename+"_720p.mp4",shell=True)
 	print("Processed",file," to 720p")
-	subprocess.call(f"ffmpeg -loglevel panic -i {file} -vf scale=-1:480 -b:v 1048576 {filename}_480p.mp4", shell=True)
+	#subprocess.call(f"ffmpeg -loglevel panic -i inputVideos/{file} -vf scale=-1:480 -b:v 1048576 {filename}_480p.mp4", shell=True)
+	subprocess.call("ffmpeg -loglevel panic -i "+file+" -vf scale=-1:480 -b:v 1048576 "+filename+"_480p.mp4",shell=True)
 	print("Processed",file," to 480p")
 	output=[filename+"_720p.mp4",filename+"_480p.mp4"]
-	print(output[0])
 	return output
 
 if __name__=="__main__":
